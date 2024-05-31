@@ -1,15 +1,12 @@
-// document.addEventListener('DOMContentLoaded', () => {
-//     console.log('Welcome to Project 3 Frontend');
-// })
+const quizSelect = document.querySelectorAll('.quiz-topic'); // query selector corresponds to all elements that match parameter
+console.log(`${quizSelect}`);
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const quizSelectors = document.querySelectorAll('.quiz-selector');
-
-    quizSelectors.forEach(button => {
+    quizSelect.forEach(button => {
         button.addEventListener('click', () => {
-            const quizType = button.getAttribute('data-quiz');
-            window.location.href = `102-quiz.html?type=${quizType}`;
-        });
+            const quizId = button.getAttribute('data-quizId'); // this should match the quiz ID from DB
+            
+            window.location.href = `quiz.html?type=${encodeURIComponent(quizId)}`;
+        }); //encodeURI inserts valid characters into url
     });
-});
+
+
