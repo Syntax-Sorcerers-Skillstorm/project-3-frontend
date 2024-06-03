@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="css/02-styles.css">
-    <script src="js/quiz.js" defer></script>
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="css/02-style.css">
+    <script src="js/02-script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Quiz Page</h1>
-    </header>
-    <hr class="thick-hr">
-    <span id="logo">
-        <img src="images/wizard-with-staff.jpg" alt="Java Logo">
-    </span>
-    <br><br>
-    <div id="quiz-container"></div> <!-- Container to hold quiz questions. -->
-    <p>Questions and answer choices</p>
-    <div id="submit">
-        <button>Submit</button>
-    </div>
-    <hr class="thick-hr">
+    <h1>Quiz taking page</h1>
+
+
+    <!-- revert back to empty ol for js 2 dynamic adding -->
+    <ol id="quiz">
+        
+    </ol>
+    <div class="quiz-buttons">
+        <div class="quiz-button">
+          <button onclick="window.location.href='results.html'">Submit</button>
+        </div>        
+
 </body>
 </html>

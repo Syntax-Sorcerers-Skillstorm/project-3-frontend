@@ -1,14 +1,75 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* body {
+    background-color: rgb(240, 210, 231);
+} */
+
+
+hr {
+    border: 2px solid black;
 }
 
 h1 {
-    color: #333;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #06c906;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#logo{
+   text-align: center;
+    display: block; margin: 0 auto;
+}
+
+
+.select{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    button{
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 3px;
+        background-color: lightgray;
+        color: black;
+        cursor: pointer;
+    }
+    
+      
+}
+
+.select button:hover {
+    background-color: lightblue;
+}
+
+#quizSpecs{
+    text-align: center;
+}
+
+#submit{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* You can nest these so they apply to just the button and not the div!? */
+    button{ 
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 3px;
+        background-color: lightgray;
+        color: black;
+        cursor: pointer;
+    }
+    
+      
+}
+
+#submit button:hover {
+    background-color: lightblue;
 }
