@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="css/02-styles.css">
+
+    <!-- remove this inline. Script is linked but verify functionality without inline -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log('Inline script loaded');
+            const scoreElement = document.getElementById('score');
+            if (scoreElement) {
+                scoreElement.innerText = "Inline script works!";
+            } else {
+                console.error('Score element not found');
+            }
+        });
+    </script>
+    <script src="js/results.js" defer></script>
+</head>
+<body>
+    <h1>Results</h1>
+    <div id="result-container">
+        <table>
+            <tr>
+                <th>Score</th>
+                <th>Percentage</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td id="score"></td>
+                <td id="percentage"></td>
+                <td id="status"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="quiz-buttons">
+        <div class="quiz-button">
+            <button onclick="window.location.href='selection.html'">Home</button>
+        </div>       
+    </div>
+</body>
+</html>
+
