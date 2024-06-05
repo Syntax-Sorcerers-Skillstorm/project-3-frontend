@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="css/02-styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<!-- Erica said to not use on click alert but it is a simple way to warn users for edge cases -->
+<body>
+  <nav id ="nav"><a onclick="alert('This will exit the quiz, are you sure?')" href="selection.html">Back</a></nav>
+  <div class="logo">  
+  <h1><strong>Exam Room</strong></h1>
+  <br>
+  <h4 id="quiz-length">Length: 10 Questions multiple choice</h4>
+  </div>
+
+  
+  <form id="quiz-form">
+    <ol id="quiz">
+        <!-- Questions are dynamically added through JS code -->
+    </ol>
+    <div class="quiz-buttons">
+        <div class="quiz-button">
+          <button type="submit">Submit</button>
+        </div>        
+    </div>
+  </form>
+</body>
+</html>
+

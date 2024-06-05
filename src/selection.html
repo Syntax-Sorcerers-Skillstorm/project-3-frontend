@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Alchemy Coding Quizzes</title>
+  <link rel="stylesheet" href="css/02-styles.css">
+  <script src="js/selection.js" defer></script>
+</head>
+<body>
+  <header>
+    <div id="nav">
+      <nav><a href="index.html">Home</a></nav>
+      <nav><a href="index.html">Contact</a></nav>
+    </div>
+    <div class="logo">
+      <h1>Select your topic</h1>
+    </div>
+  </header>
+
+
+  <!-- I dont think I need these tool tips since we went with Modals -->
+  
+  <main>
+    <div class="quiz-buttons">
+      <div class="quiz-button">
+        <img src="images/java-logo.png" alt="Java logo" height="200" width="200">
+        <button id="1" class="tooltip-btn">Java Basics</button>
+      </div>
+      <div class="quiz-button">
+        <img src="images/html-css-icon.webp" alt="HTML/CSS logo" height="200" width="200">
+        <button id="2" class="tooltip-btn">HTML/CSS</button>
+      </div>
+      <div class="quiz-button">
+        <img src="images/Angular_logo.webp" alt="Angular logo" height="200" width="200">
+        <button id="3" class="tooltip-btn">Angular</button>
+      </div>
+      <div class="quiz-button">
+        <img src="images/js-logo.png" alt="JavaScript logo" height="200" width="200">
+        <button id="4" class="tooltip-btn">JavaScript</button>
+      </div>
+    </div>
+    <br><br><br>
+    <div class="quiz-button">
+      <img src="images/conjure2.jpg" alt="picture of alchemist" height="200" width="200">
+    </div>
+    <div class="quiz-button">
+      <button id="5" class="tooltip-btn">Conjure random</button>
+    </div>
+  </main>
+
+ 
+  <div id="quizModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span> 
+      <p id="modal-description">Quiz Description</p>
+      <button id="start-quiz">Start Quiz</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
+  </footer>
+</body>
+</html>
