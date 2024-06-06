@@ -4,60 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Alchemy Coding Quizzes</title>
-  <link rel="stylesheet" href="css/02-styles.css">
+  <link rel="stylesheet" href="css/03-styles.css">
   <script src="js/selection.js" defer></script>
 </head>
 <body>
   <header>
     <div id="nav">
-      <nav><a href="index.html">Home</a></nav>
-      <nav><a href="index.html">Contact</a></nav>
+      <button onclick="window.location.href='index.html'">Home</button>
+      <button id="contactButton">Contact</button>
+    </div>
+    <div id="modal-contact" class="modal-contact" style="display:none;">
+      <div class="modal-content-contact">
+        <span class="close-button" id="closeButton">&times;</span>
+        <h2>Contact Us</h2>
+        <form action="https://www.w3schools.com/action_page.php" method="get">
+          <label for="name">Username:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your username" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
     <div class="logo">
-      <h1>Select your topic</h1>
+      <h1><strong>Select a topic</strong></h1>
     </div>
   </header>
 
-
-  <!-- I dont think I need these tool tips since we went with Modals -->
-  
   <main>
     <div class="quiz-buttons">
       <div class="quiz-button">
-        <img src="images/java-logo.png" alt="Java logo" height="200" width="200">
-        <button id="1" class="tooltip-btn">Java Basics</button>
+        <img src="images/java-logo.png" alt="Java logo">
+        <button id="1">Java Basics</button>
       </div>
       <div class="quiz-button">
-        <img src="images/html-css-icon.webp" alt="HTML/CSS logo" height="200" width="200">
-        <button id="2" class="tooltip-btn">HTML/CSS</button>
+        <img src="images/html-css-icon.webp" alt="HTML/CSS logo">
+        <button id="2">HTML/CSS</button>
       </div>
       <div class="quiz-button">
-        <img src="images/Angular_logo.webp" alt="Angular logo" height="200" width="200">
-        <button id="3" class="tooltip-btn">Angular</button>
+        <img src="images/Angular_logo.webp" alt="Angular logo">
+        <button id="3">Angular</button>
       </div>
       <div class="quiz-button">
-        <img src="images/js-logo.png" alt="JavaScript logo" height="200" width="200">
-        <button id="4" class="tooltip-btn">JavaScript</button>
+        <img src="images/js-logo.png" alt="JavaScript logo">
+        <button id="4">JavaScript</button>
       </div>
     </div>
     <br><br><br>
     <div class="quiz-button">
-      <img src="images/conjure2.jpg" alt="picture of alchemist" height="200" width="200">
-    </div>
-    <div class="quiz-button">
-      <button id="5" class="tooltip-btn">Conjure random</button>
+      <button id="5">Random Quiz</button>
     </div>
   </main>
-
  
   <div id="quizModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span> 
-      <p id="modal-description">Quiz Description</p>
+      <span class="close" id="closeQuizButton">&times;</span> 
+      <h2 class="modal-title">Get ready to test your knowledge!</h2>
+      <p class="modal-description" id="modal-description">Quiz Description</p>
+      <h3 class="modal-footer">Length: 10 Questions</h3>
       <button id="start-quiz">Start Quiz</button>
     </div>
   </div>
-
   <footer>
     <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
   </footer>

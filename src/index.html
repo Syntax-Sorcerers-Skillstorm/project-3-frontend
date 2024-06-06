@@ -4,33 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Sorcerer</title>
-    <link rel="stylesheet" href="css/02-styles.css">
-    
+    <link rel="stylesheet" href="css/03-styles.css">
+    <script src="js/selection.js" defer></script>
 </head>
 <body>
-    <header>
-                <nav id="nav"a href="index.html">Contact</a></nav>   
-    </header>
-    
+    <div class="content">
+        <header>
+            <div id="nav">
+                <button id="contactButton">Contact</button>
+            </div>
+            <div id="modal-contact" class="modal-contact" style="display:none;">
+                <div class="modal-content-contact">
+                    <span class="close-button" id="closeButton">&times;</span>
+                    <h2>Contact Us</h2>
+                    <form action="https://www.w3schools.com/action_page.php" method="get">
+                        <label for="name">Username:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your username" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <div class="logo">
+            <h1><strong>Digital Alchemy Coding Quiz</strong></h1>
+        </div>
+        <br><br><br>
+        <div class="quote">
+            <h3>"Knowledge has to be improved, challenged, and increased constantly or it vanishes."
+                <br> - Peter Drucker
+            </h3>
+        </div>
+        <div class="quiz-buttons">
+            <div class="quiz-button">
+                <button onclick="window.location.href='selection.html'">Enter</button>
+            </div>
+        </div>
+    </div>
     <br><br>
-    <div class="logo">
-        <h1>Digital Alchemy Coding Quiz</h1>
-    </div>
-    <br><br><br><br><br>
-    <div class="quote">
-        <h3>"Knowledge has to be improved, challanged, and increased constantly or it vanishes."
-            <br> - Peter Drucker
-        </h3>
-    </div>
-<main>
-    <div class="quiz-buttons">
-      <div class="quiz-button">
-        <button onclick="window.location.href='selection.html'">Enter</button>
-      </div>
-      </div>
-    </main>
+    <div>
     <footer>
         <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
-      </footer>
-    </body>
-    </html>
+    </footer>
+  </div>
+</body>
+</html>
