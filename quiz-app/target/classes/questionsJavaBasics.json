@@ -1,0 +1,45 @@
+{
+    "Questions": [
+      {
+        "category": "Java Basics",
+        "question": "What is the default value of an int variable in Java?",
+        "option1": "0",
+        "option2": "null",
+        "option3": "undefined",
+        "correctAnswer": "0"
+      },
+      {
+        "category": "Java Basics",
+        "question": "Which keyword is used to inherit a class in Java?",
+        "option1": "extend",
+        "option2": "extends",
+        "option3": "inherit",
+        "correctAnswer": "extends"
+      },
+      {
+        "category": "Java Basics",
+        "question": "Which method is used to start a Java program?",
+        "option1": "init()",
+        "option2": "start()",
+        "option3": "main()",
+        "correctAnswer": "main()"
+      },
+      {
+        "category": "Java Basics",
+        "question": "Which loop is guaranteed to execute at least once?",
+        "option1": "for",
+        "option2": "while",
+        "option3": "do-while",
+        "correctAnswer": "do-while"
+      },
+      {
+        "category": "Java Basics",
+        "question": "Which keyword is used to handle exceptions in Java?",
+        "option1": "catch",
+        "option2": "handle",
+        "option3": "try",
+        "correctAnswer": "catch"
+      }
+    ]
+  }
+  

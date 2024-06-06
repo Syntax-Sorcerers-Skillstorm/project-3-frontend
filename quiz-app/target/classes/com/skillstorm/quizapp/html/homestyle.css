@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(63, 1, 63);
+  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.logo h1 {
+  color: #FFFF;
+  font-weight: lighter;
+  font-size: xx-large
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+
+.quiz-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.quiz-button {
+  text-align: center;
+}
+
+.quiz-button img {
+  width: 100px;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 20px;
+  animation: steam 1s infinite alternate;
+}
+
+@keyframes steam {
+  25% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+.quiz-button button {
+  background-color: white;
+  color: navy;
+  border: mediumblue;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+footer .start-quiz, .cancel-quiz {
+  background-color: white;
+  color: navy;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+footer .cancel-quiz {
+  margin-left: 10px; 
+}

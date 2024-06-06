@@ -1,0 +1,48 @@
+body {
+    background-color: #FFFF;
+    font-family: 'Times New Roman', Times, serif;
+    color: #53045bb1;
+    margin: 0;
+    padding: 0;
+}
+
+.quiz-container, .results-container {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid rgba(74, 6, 76, 0.542);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(80, 18, 79, 0.304);
+    text-align: center;
+}
+
+.coffee-cup {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.results-container #results {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.results-container #gpa {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.results-container button {
+    background-color: #53045b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}

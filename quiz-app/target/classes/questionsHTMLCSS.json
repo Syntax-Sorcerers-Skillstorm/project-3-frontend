@@ -1,0 +1,44 @@
+{
+  "Questions": [
+    {
+      "category": "HTML/CSS",
+      "question": "What does HTML stand for?",
+      "option1": "Hyperlinks and Text Markup Language",
+      "option2": "Hyper Text Markup Language",
+      "option3": "Home Tool Markup Language",
+      "correctAnswer": "Hyper Text Markup Language"
+    },
+    {
+      "category": "HTML/CSS",
+      "question": "Which HTML tag is used to define an internal style sheet?",
+      "option1": "<css>",
+      "option2": "<style>",
+      "option3": "<script>",
+      "correctAnswer": "<style>"
+    },
+    {
+      "category": "HTML/CSS",
+      "question": "Which property is used to change the background color in CSS?",
+      "option1": "bgcolor",
+      "option2": "background-color",
+      "option3": "color",
+      "correctAnswer": "background-color"
+    },
+    {
+      "category": "HTML/CSS",
+      "question": "Which HTML tag is used to define a hyperlink?",
+      "option1": "<link>",
+      "option2": "<a>",
+      "option3": "<href>",
+      "correctAnswer": "<a>"
+    },
+    {
+      "category": "HTML/CSS",
+      "question": "Which CSS property controls the text size?",
+      "option1": "font-size",
+      "option2": "text-style",
+      "option3": "font-style",
+      "correctAnswer": "font-size"
+    }
+  ]
+}
