@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <link rel="stylesheet" href="css/03-styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+  <nav id="nav">
+    <button onclick="window.location.href='selection.html'">Back</button>
+  </nav>
+  <div class="logo">  
+    <h1><strong>Exam Room</strong></h1>
+    <br>
+    <h4 id="quiz-length">Length: 10 Questions, Multiple Choice</h4>
+  </div>
+
+  <div class="quiz-instructions">
+    <p>**IMPORTANT** Once you have completed all the questions, click the "Submit" button to submit your answers.</p>
+  </div>
+<hr>
+  <form id="quiz-form">
+    <ol id="quiz">
+        <!-- Questions are dynamically added through JS code -->
+    </ol>
+    <div class="quiz-buttons">
+        <div class="quiz-button">
+          <button type="submit">Submit</button>
+        </div>        
+    </div>
+  </form>
+  <footer>
+    <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
