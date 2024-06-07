@@ -193,6 +193,7 @@ footer .cancel-quiz {
     font-size: 28px;
     font-weight: bold;
     transition: color 0.3s ease;
+  
 }
 
 .close:hover,
@@ -354,6 +355,7 @@ table td {
     width: auto; /* Ensure consistent width */
     margin: 10px; /* Add margin for spacing */
     text-align: center;
+    
 }
 
 .modal-content button:hover {
@@ -384,4 +386,12 @@ table td {
 
 .resource-list a:hover {
     color: lightgray; /* Change color on hover for better visibility */
+}
+
+button.cancel { 
+    color: #ffffff;
+    font-size: 13.3333px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+   
 }

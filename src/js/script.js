@@ -94,6 +94,11 @@ document.addEventListener("DOMContentLoaded", async function() {
       closeModal(this.getAttribute('data-modal'));
     });
   });
+  document.querySelectorAll('.cancel').forEach(function(closeButton) {
+    closeButton.addEventListener('click', function() {
+      closeModal(this.getAttribute('data-modal'));
+    });
+  });
 
   window.onclick = function(e) {
     if (e.target.classList.contains('modal')) {
