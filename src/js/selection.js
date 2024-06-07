@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Contact Modal elements
+  // Contact Modal 
   const contactButton = document.getElementById('contactButton');
   const modalContact = document.getElementById('modal-contact');
   const closeButton = document.getElementById('closeButton');
 
-  // Event listener for opening the contact modal
   contactButton.onclick = function() {
     modalContact.style.display = "block";
   }
 
-  // Event listener for closing the contact modal
   closeButton.onclick = function() {
     modalContact.style.display = "none";
   }
 
-  // Event listener for closing the contact modal when clicking outside of it
-  window.onclick = function(event) {
-    if (event.target == modalContact) {
+  // closes when mouse click outide box
+  window.onclick = function(e) {
+    if (e.target == modalContact) {
       modalContact.style.display = "none";
     }
   }
 
-  // Quiz Modal elements
+  // Quiz description Modal 
   const quizModal = document.getElementById("quizModal");
   const closeQuizButton = document.getElementById("closeQuizButton");
   const modalDescription = document.getElementById("modal-description");
@@ -36,13 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
     5: "Generate a random quiz which includes a mix of various topics to challenge your knowledge."
   };
 
-  // Function to open the quiz modal
   function quizPreview(e) {
     const buttonId = e.target.id;
     modalDescription.textContent = quizDescription[buttonId];
     quizModal.style.display = "block";
 
-    // Set the start quiz button link
+    // Set url to quiz id or random on start
     startQuiz.onclick = function() {
       if (buttonId === "5") {
         window.location.href = `quiz.html?random=true`;
@@ -52,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
   }
 
-  // Add event listeners to quiz buttons
+  // checks to see if quiz button has an ID property and then opens the modal
   for (let id in quizDescription) {
     if (quizDescription.hasOwnProperty(id)) {
       const button = document.getElementById(id);
@@ -64,14 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Close quiz modal on close button click
   closeQuizButton.onclick = function() {
     quizModal.style.display = "none";
   }
 
-  // Close quiz modal on clicking outside of the modal
-  window.onclick = function(event) {
-    if (event.target == quizModal) {
+   // closes when mouse click outide box
+  window.onclick = function(e) {
+    if (e.target == quizModal) {
       quizModal.style.display = "none";
     }
   }

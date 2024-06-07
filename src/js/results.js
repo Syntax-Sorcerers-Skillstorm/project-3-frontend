@@ -12,25 +12,26 @@ document.addEventListener("DOMContentLoaded", function() {
         const percentage = (scoreInt / 10) * 100;
         const status = percentage >= 50 ? 'Pass' : 'Fail';
 
-        // create variables for score, percentage, and status elements
+        // variables for score, percentage, and status elements
         const scoreElement = document.getElementById('score');
         const percentageElement = document.getElementById('percentage');
         const statusElement = document.getElementById('status');
         const tableRow = document.querySelector('#result-container tbody tr');
 
-        
+        // checks if these elements exist and set as inner text elements
+        // if/else logic for pass or fail score
         if (scoreElement && percentageElement && statusElement) {
-            // Set text content
+        
             scoreElement.innerText = `${scoreInt}/10`;
             percentageElement.innerText = `${percentage}%`;
             statusElement.innerText = status;
 
-            // Change row color based on status
+            // Change row color based on pass/fail
             if (status === 'Pass') {
                 tableRow.style.backgroundColor = 'green';
                 tableRow.style.color = 'white';
 
-                // Add success message
+                // passing score message
                 const message = document.createElement('p');
                 message.textContent = 'Congratulations! You passed!';
                 message.className = 'success-message';
@@ -39,17 +40,19 @@ document.addEventListener("DOMContentLoaded", function() {
                 tableRow.style.backgroundColor = 'red';
                 tableRow.style.color = 'white';
 
-                // Add failure message and resource links
+                // failure message and resource links
                 const message = document.createElement('p');
                 message.textContent = 'We noticed that you didn’t pass this time. Here are some resources to help you improve:';
                 message.className = 'fail-message';
 
                 const resources = [
-                    { text: 'Resource 1', url: 'https://example.com/resource1' },
-                    { text: 'Resource 2', url: 'https://example.com/resource2' },
-                    { text: 'Resource 3', url: 'https://example.com/resource3' }
+                    { text: 'Java Turtorial', url: 'https://docs.oracle.com/javase/tutorial/getStarted/index.html' },
+                    { text: 'HTML/CSS Resources', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+                    { text: 'Angular Resources', url: 'hhttps://angular.dev/' },
+                    { text: 'JavaScript Resources', url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' }
                 ];
 
+                // dynamically creates message and resource list
                 const resourceList = document.createElement('ol');
                 resourceList.className = 'resource-list';
                 resources.forEach(resource => {
@@ -57,11 +60,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     const link = document.createElement('a');
                     link.href = resource.url;
                     link.textContent = resource.text;
-                    link.style.color = 'white';  // Ensure the links are visible on the red background
+                    link.style.color = 'white';
                     listItem.appendChild(link);
                     resourceList.appendChild(listItem);
                 });
-
+                // append child is what adds the message and resource list to the ol dynamically
                 const resultContainer = document.getElementById('result-container');
                 resultContainer.appendChild(message);
                 resultContainer.appendChild(resourceList);
