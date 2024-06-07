@@ -4,43 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Results</title>
-    <link rel="stylesheet" href="css/02-styles.css">
-
-    <!-- remove this inline. Script is linked but verify functionality without inline -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log('Inline script loaded');
-            const scoreElement = document.getElementById('score');
-            if (scoreElement) {
-                scoreElement.innerText = "Inline script works!";
-            } else {
-                console.error('Score element not found');
-            }
-        });
-    </script>
+    <link rel="stylesheet" href="css/03-styles.css">
     <script src="js/results.js" defer></script>
 </head>
 <body>
-    <h1>Results</h1>
+    <header>
+        <nav id="nav">
+            <button onclick="window.location.href='selection.html'">Home</button>
+        </nav>
+    </header>
+    
+    <div>
+        <h1 class="results-title">Results</h1>
+        <hr>
+    </div>
     <div id="result-container">
         <table>
-            <tr>
-                <th>Score</th>
-                <th>Percentage</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td id="score"></td>
-                <td id="percentage"></td>
-                <td id="status"></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Score</th>
+                    <th>Percentage</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="score"></td>
+                    <td id="percentage"></td>
+                    <td id="status"></td>
+                </tr>
+            </tbody>
         </table>
+        <p class="passing-info">A passing score is 70% or above.</p>
+        <!-- Placeholder for fail message and resources -->
+       
+            </div>
+        </div>
     </div>
-
-    <div class="quiz-buttons">
-        <div class="quiz-button">
-            <button onclick="window.location.href='selection.html'">Home</button>
-        </div>       
+    <div>
+        <footer class="foot">
+            <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
