@@ -1,10 +1,12 @@
-// remove event listener since this is redundant... but verify functionality first
+
 document.addEventListener("DOMContentLoaded", async function() {
 
-  // fetch data based on categoryId
+  // Fetch data based on categoryId or random
   async function getData(categoryId) {
+    const url = categoryId === 'random' ? 'http://localhost:8080/random' : `http://localhost:8080/questions/category/${categoryId}`;
     try {
-      const response = await fetch(`http://localhost:8080/questions/category/${categoryId}`);
+      const response = await fetch(url);
+
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
@@ -16,19 +18,66 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
   }
 
-  // parse categoryId from URL
-  //https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
-  //https://stackoverflow.com/questions/14395090/what-is-location-search-in-javascript
+
+  // Submit answers initiates POST request to backend
+  async function submitQuiz(form) {
+    const formData = new FormData(form);
+    const userAnswers = [];
+    formData.forEach((value, key) => {
+      userAnswers.push({ questionId: key.replace('option', ''), answer: value });
+    });
+
+    try {
+      // POST request to backend
+      const response = await fetch('http://localhost:8080/answers/submit', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userAnswers)
+      });
+
+      const result = await response.json();
+
+      // Null avoidance to ensure score object exists in result
+      if (result && result.score !== undefined) {
+        // Need this to open the results page on click
+        const url = new URL(window.location.href);
+        url.pathname = 'src/resultspage.html'; 
+        // Sets URL path to /score
+        url.searchParams.set('score', result.score);
+        window.location.href = url.toString();
+      } else {
+        console.error('Result or score is not defined:', result);
+      }
+    } catch (error) {
+      console.error('Error submitting answers:', error);
+    }
+  }
+
+  // Function to open modal
+  function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+  }
+
+  // Function to close modal
+  function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+  }
+
+  // Parse parameters from URL
   const urlParams = new URLSearchParams(window.location.search);
   const categoryId = urlParams.get('categoryId');
-  if (categoryId) {
-    const quizData = await getData(categoryId);
+  const isRandom = urlParams.get('random');
+
+  if (categoryId || isRandom) {
+    const quizData = await getData(isRandom ? 'random' : categoryId);
+
     if (quizData) {
       const ol = document.getElementById('quiz');
       quizData.forEach(question => {
         const li = document.createElement('li');
-        // https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement
-        // hardcoded ol and buttons first and then used that to help create the template below
+
         li.innerHTML = `
           <div>${question.questionText}</div>
           <label><input type="radio" name="option${question.questionId}" value="${question.option1}"> ${question.option1}</label><br>
@@ -44,50 +93,68 @@ document.addEventListener("DOMContentLoaded", async function() {
     console.error('No matching quiz ID');
   }
 
+  // Modal event listeners
+  document.querySelectorAll('.close').forEach(function(closeButton) {
+    closeButton.addEventListener('click', function() {
+      closeModal(this.getAttribute('data-modal'));
+    });
+  });
+  document.querySelectorAll('.cancel').forEach(function(closeButton) {
+    closeButton.addEventListener('click', function() {
+      closeModal(this.getAttribute('data-modal'));
+    });
+  });
 
+  window.onclick = function(e) {
+    if (e.target.classList.contains('modal')) {
+      closeModal(e.target.id);
+    }
+  };
 
-  //event listener needed to collect user answers
-  const form = document.getElementById('quiz-form');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  // Back button modal
+  document.getElementById('backButton').addEventListener('click', function() {
+    openModal('backModal');
+  });
 
-    // Collect user answers
+  document.getElementById('confirmExit').addEventListener('click', function() {
+    window.location.href = 'selection.html';
+  });
+
+  // Submit button modal
+  document.getElementById('submitButton').addEventListener('click', function() {
+    const form = document.getElementById('quiz-form');
     const formData = new FormData(form);
-    const userAnswers = [];
-    formData.forEach((value, key) => {
-      userAnswers.push({ questionId: key.replace('option', ''), answer: value });
+    let unansweredQuestions = false;
+
+    // Check for unanswered questions
+    const questions = document.querySelectorAll('ol#quiz > li');
+    questions.forEach((question, index) => {
+      const radioButtons = question.querySelectorAll('input[type="radio"]');
+      let answered = false;
+      radioButtons.forEach((radioButton) => {
+        if (radioButton.checked) {
+          answered = true;
+        }
+      });
+      if (!answered) {
+        unansweredQuestions = true;
+      }
     });
 
-    console.log('User Answers:', userAnswers); // Debugging line
-
-    try {
-      // POST request to backend
-      const response = await fetch('http://localhost:8080/answers/submit', { 
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(userAnswers)
-      });
-
-      const result = await response.json();
-      console.log('Result from Backend:', result); 
-
-      // edge case & error handeling
-      if (result && result.score !== undefined) {
-
-        // need this to open the results page on click
-        const url = new URL(window.location.href);
-        url.pathname = 'src/resultspage.html' 
-        url.searchParams.set('score', result.score);
-        console.log('Navigating to:', url.toString()); 
-        window.location.href = url.toString();
-      } else {
-        console.error('Result or score is not defined:', result);
-      }
-    } catch (error) {
-      console.error('Error submitting answers:', e);
+    if (unansweredQuestions) {
+      openModal('submitModal');
+    } else {
+      submitQuiz(form);
     }
   });
+
+  document.getElementById('confirmSubmit').addEventListener('click', function() {
+    const form = document.getElementById('quiz-form');
+    submitQuiz(form);
+  });
+
 });
+
+
+
 
