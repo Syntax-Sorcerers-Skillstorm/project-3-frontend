@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="css/03-styles.css">
     <script src="js/script.js" defer></script>
 </head>
-<body>
+<body class="sticky-footer-container">
   <nav id="nav">
-    <button onclick="window.location.href='selection.html'">Back</button>
+    <button id="backButton">Back</button>
   </nav>
   <div class="logo">  
     <h1><strong>Exam Room</strong></h1>
@@ -21,21 +21,45 @@
     <p>**IMPORTANT** Once you have completed all the questions, click the "Submit" button to submit your answers.</p>
   </div>
 <hr>
-<div class="container">
+<div class="container content">
   <form id="quiz-form">
     <ol id="quiz">
         <!-- Questions are dynamically added through JS code -->
     </ol>
     <div class="quiz-buttons">
         <div class="quiz-button">
-          <button type="submit">Submit</button>
+          <button type="button" id="submitButton">Submit</button>
         </div>        
     </div>
   </form>
 </div>
-  <footer class="foot">
-    <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
-  </footer>
+
+<!-- Back buttom Modal -->
+<div id="backModal" class="modal">
+  <div class="modal-content">
+    <span class="close" data-modal="backModal">&times;</span>
+    <h2 class="modal-title">Confirm Exit</h2>
+    <p class="modal-description">Are you sure you want to exit? All progress will be lost.</p>
+    <button id="confirmExit">Exit</button>
+    <button class="close" data-modal="backModal">Cancel</button>
+  </div>
+</div>
+
+<!-- Unanswered Modal -->
+<div id="submitModal" class="modal">
+  <div class="modal-content">
+    <span class="close" data-modal="submitModal">&times;</span>
+    <h2 class="modal-title">Unanswered Questions</h2>
+    <p class="modal-description">You have unanswered questions. Are you sure you want to submit?</p>
+    <button id="confirmSubmit">Submit</button>
+    <button class="close" data-modal="submitModal">Cancel</button>
+  </div>
+</div>
+
+<footer class="foot">
+  <p>&copy; 2024 Syntax Sorcerers. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
 

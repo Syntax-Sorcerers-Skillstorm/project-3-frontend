@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
   // Contact Modal elements
   const contactButton = document.getElementById('contactButton');
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     2: "HTML/CSS quiz includes the foundational knowledge needed to create and style web pages using HTML for structure and CSS for design and layout.",
     3: "Angular quiz focuses on the features and functionalities of the Angular framework for building dynamic and modern web applications.",
     4: "JavaScript quiz encompasses the essentials of JavaScript programming, including variables, functions, events, and DOM manipulation.",
-    5: "Generate a random quiz which includes a mix of various topics to designed tochallenge your knowledge."
+    5: "Generate a random quiz which includes a mix of various topics to challenge your knowledge."
   };
 
   // Function to open the quiz modal
@@ -45,7 +44,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Set the start quiz button link
     startQuiz.onclick = function() {
-      window.location.href = `quiz.html?categoryId=${buttonId}`;
+      if (buttonId === "5") {
+        window.location.href = `quiz.html?random=true`;
+      } else {
+        window.location.href = `quiz.html?categoryId=${buttonId}`;
+      }
     };
   }
 
@@ -73,3 +76,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+

@@ -331,7 +331,7 @@ table td {
     width: 100%;
     text-align: center;
     padding: 10px;
-    background-color: #8e8e8e;
+    background-color: #333;
     color: #fff;
 }
 .footer {
@@ -339,7 +339,49 @@ table td {
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 20px;
-    background-color: #8e8e8e;
+    padding: 10px;
+    background-color: #333;
     color: #fff;
+}
+.modal-content button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto; /* Ensure consistent width */
+    margin: 10px; /* Add margin for spacing */
+    text-align: center;
+}
+
+.modal-content button:hover {
+    background-color: red;
+    color: #fff;
+}
+
+
+
+.modal-content .close:hover {
+    background-color: red;
+}
+
+/* Ensure the ordered list for resources is styled appropriately */
+.resource-list {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.resource-list li {
+    margin-bottom: 10px;
+}
+
+.resource-list a {
+    color: white; /* Ensure the link color is white */
+    text-decoration: underline;
+}
+
+.resource-list a:hover {
+    color: lightgray; /* Change color on hover for better visibility */
 }
