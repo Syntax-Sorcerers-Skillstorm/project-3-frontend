@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
   // Contact Modal 
   const contactButton = document.getElementById('contactButton');
   const modalContact = document.getElementById('modal-contact');
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // checks to see if quiz button has an ID property and then opens the modal
+
   for (let id in quizDescription) {
     if (quizDescription.hasOwnProperty(id)) {
       const button = document.getElementById(id);
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
+
 
   closeQuizButton.onclick = function() {
     quizModal.style.display = "none";
@@ -72,4 +75,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
+
 

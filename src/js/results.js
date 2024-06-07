@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const percentage = (scoreInt / 10) * 100;
         const status = percentage >= 50 ? 'Pass' : 'Fail';
 
+
         // variables for score, percentage, and status elements
         const scoreElement = document.getElementById('score');
         const percentageElement = document.getElementById('percentage');
@@ -22,9 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // if/else logic for pass or fail score
         if (scoreElement && percentageElement && statusElement) {
         
+
             scoreElement.innerText = `${scoreInt}/10`;
             percentageElement.innerText = `${percentage}%`;
             statusElement.innerText = status;
+
 
             // Change row color based on pass/fail
             if (status === 'Pass') {
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 resultContainer.appendChild(resourceList);
             }
 
+
             console.log('Score:', scoreInt); 
             console.log('Percentage:', percentage); 
             console.log('Status:', status); 
@@ -80,6 +84,4 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Score not found in URL parameters.');
     }
 });
-
-
 

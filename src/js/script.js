@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", async function() {
 
   // Fetch data based on categoryId or random
@@ -5,6 +6,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const url = categoryId === 'random' ? 'http://localhost:8080/random' : `http://localhost:8080/questions/category/${categoryId}`;
     try {
       const response = await fetch(url);
+
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
       }
@@ -15,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async function() {
       console.error('Fetch error:', error);
     }
   }
+
 
   // Submit answers initiates POST request to backend
   async function submitQuiz(form) {
@@ -69,10 +72,12 @@ document.addEventListener("DOMContentLoaded", async function() {
 
   if (categoryId || isRandom) {
     const quizData = await getData(isRandom ? 'random' : categoryId);
+
     if (quizData) {
       const ol = document.getElementById('quiz');
       quizData.forEach(question => {
         const li = document.createElement('li');
+
         li.innerHTML = `
           <div>${question.questionText}</div>
           <label><input type="radio" name="option${question.questionId}" value="${question.option1}"> ${question.option1}</label><br>
@@ -149,6 +154,7 @@ document.addEventListener("DOMContentLoaded", async function() {
   });
 
 });
+
 
 
 
