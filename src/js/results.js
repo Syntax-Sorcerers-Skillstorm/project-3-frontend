@@ -35,3 +35,4 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Score not found in URL parameters.');
     }
 });
+
